@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<script src="https://kit.fontawesome.com/05137d6d6b.js" crossorigin="anonymous"></script>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light" th:fragment="nav">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/recycling/userIndex">
+            <img src="/images/logo6.png" width="auto" height="60">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/recycling/about">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="recycle_Nav" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Recycle an item
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/recycling/items/plasticBottles">Plastic bottles</a></li>
+                        <li><a class="dropdown-item" href="/recycling/items/drinkCans">Drink cans</a></li>
+                        <li><a class="dropdown-item" href="/recycling/items/vapes">Vapes</a></li>
+                        <li><a class="dropdown-item" href="/recycling/items/paper">Paper</a></li>
+                        <li><a class="dropdown-item" href="/recycling/items/foil">Foil</a></li>
+                        <li><a class="dropdown-item" href="/recycling/items/cardboard">Cardboard</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/recycling/items/moreItems">Find more items</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/recycling/community" id="recycleNav">Community</a>
+                </li>
+                <li class="session" th:if="${session.user != null}">
+                    <h3 th:text="|Hello, ${session.firstname}!|" ></h3>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto2" th:if="${session.user != null}">
+                <li class="nav-item3">
+                    <a class="nav-link" id="navbarPlus" href="/recycling/community/save"><i class="fa-solid fa-plus" style="font-size: 25px;"></i></a>
+                </li>
+                <li class="nav-item3">
+                    <a class="nav-link" id="navbarCreate" href="/recycling/community/save"> Create</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto" th:if="${session.user != null}">
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarProfileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Profile
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="left: -100px;">
+                    <li class="profile"><a class="dropdown-item" href="/recycling/articles/update">Manage your account</a></li>
+                    <li class="profile"><a class="dropdown-item" href="/recycling/logout">Sign-out</a></li>
+                </ul>
+                </li>
+            </ul>
+                <ul class="nav-item" th:unless="${session.user != null}">
+                    <a href="/recycling/articles/signin" class="btn btn-outline-success">Sign-in</a>
+                </ul>
+
+        </div>
+    </div>
+</nav>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+#Server port
+server:
+  port: 8888
+  connection-timeout: 60000
+
+#API
+spring:
+  cloud:
+    gcp:
+      project-id: sage-wave-406011
+      credentials:
+        location: file:/Users/soyoungahn/Documents/Final Project/sage-wave-406011-ebd44015c4c7.json
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+# data base
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_recycling
+    username: user_recycle2
+    password: 1234
+  thymeleaf:
+    cache: false
+
+  # Pretty print SQL
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      format_sql: true
+
+  # JPA logging setting
+  # Print query as a debug level
+  logging:
+    level:
+      org:
+        hibernate:
+          SQL: DEBUG
+
+  #Display parameter
+          type:
+            descriptor:
+              sql:
+                BasicBinder: TRACE
+
+# Spring data jpa
+  database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  open-in-view: false
+
+#  rootLogger:
+#    level: DEBUG
+#    appenderRef: A1
+#
+#  appenders:
+#    A1:
+#      type: org.apache.log4j.ConsoleAppender
+#      layout:
+#        type: org.apache.log4j.PatternLayout
+#        conversionPattern: "%-4r [%t] %-5p %c %x - %m%n"
+
+
+
+#spring.jpa.hibernate.ddl-auto=update
+#spring.jpa.show-sql: true
+
+
+

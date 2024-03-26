@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vapes | Recycling an item</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta name="description" content="Welcome to Recycling A to Z where you can find out how to dispose of the waste. Browse Recycling A to Z and communicate with users on community.">
+    <meta name="keywords" content="recycling, waste, dispose, vapes, plastic bottles, paper, foil, cardboard, drinks cans, batteries, glass">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+    </style>
+    <script src="https://kit.fontawesome.com/05137d6d6b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<!-- Navigation -->
+<nav class="navbar" th:replace="fragment/header :: nav">
+</nav>
+
+<div class="container my-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb p-3 bg-body-tertiary rounded-3">
+            <li class="breadcrumb-item">
+                <a class="link-body-emphasis" href="/recycling/userIndex"><i class="fa-solid fa-house-chimney"></i></a>
+            </li>
+            <li class="breadcrumb-item">
+                <a class="link-body-emphasis fw-semibold text-decoration-none" href="/recycling/items/moreItems">Recycle an item</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                Vapes
+            </li>
+        </ol>
+    </nav>
+</div>
+
+<div class="px-4 py-5 my-5 text-center">
+    <img src=/images/vapes.jpg alt="vapes image" width="1000" height="450">
+
+    <div class="content">
+    <h3 class="head">How to dispose of vapes</h3>
+    <br>
+        <div class="item_div">
+            <p><i class="fa-regular fa-circle-check"></i> Utilize take-back schemes offered by retailers for proper vape disposal.</p>
+            <p><p><i class="fa-regular fa-circle-check"></i> Some local authorities may accept vapes at household recycling centers; check your local council website for details.</p>
+            <p><i class="fa-regular fa-circle-xmark"></i> Vapes pose safety risks and should not be disposed of or recycled at home.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container" th:replace="fragment/footer :: copy">
+</div>
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="/api.js"></script>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>

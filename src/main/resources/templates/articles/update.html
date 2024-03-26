@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Update | Recycling A to Z</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <meta name="description" content="Welcome to Recycling A to Z where you can find out how to dispose of the waste. Browse Recycling A to Z and communicate with users on community.">
+  <meta name="keywords" content="recycling, waste, dispose, vapes, plastic bottles, paper, foil, cardboard, drinks cans, batteries, glass">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+  <!-- styles CSS -->
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light" th:replace="fragment/header :: nav">
+</nav>
+
+<form class="row g-3" action="/recycling/articles/update" method="post" onsubmit="return CheckForm();">
+  <input type="hidden" class="form-control is-invalid" id="validationId" th:value="${updateMember.id}" name="id" aria-describedby="validationFirstnameFeedback">
+
+  <div class="col-md-6 offset-md-3" style="margin-top: 50px;">
+    <label for="validationFirstname" class="form-label">First name*</label>
+    <input type="text" class="form-control is-valid" id="validationFirstname" th:value="${updateMember.firstname}" name="firstname" aria-describedby="validationFirstnameFeedback" readonly>
+    <div id="validationFirstnameFeedback" class="invalid-feedback">
+      Please provide the First name.
+    </div>
+  </div>
+
+  <div class="col-md-6"></div>
+
+  <div class="col-md-6 offset-md-3">
+    <label for="validationLastname" class="form-label">Last name*</label>
+    <input type="text" class="form-control is-valid" id="validationLastname" th:value="${updateMember.lastname}" name="lastname" aria-describedby="validationLastnameFeedback" required>
+    <div id="validationLastnameFeedback" class="invalid-feedback">
+      Please provide the Last name.
+    </div>
+  </div>
+
+  <div class="col-md-6"></div>
+
+  <div class="col-md-6 offset-md-3">
+    <label for="validationEmail" class="form-label">Email address*</label>
+    <div class="input-group has-validation">
+      <span class="input-group-text" id="inputGroupPrepend3">@</span>
+      <input type="text" class="form-control is-valid" id="validationEmail" th:value="${updateMember.emailAddress}" name="emailAddress" aria-describedby="inputGroupPrepend3 validationEmailFeedback" readonly>
+      <div id="validationEmailFeedback" class="invalid-feedback">
+        Please provide an email address.
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6"></div>
+
+  <div class="col-md-6 offset-md-3">
+    <label for="validationPassword" class="form-label">A new password*</label>
+    <div class="input-group has-validation">
+      <input type="password" class="form-control is-valid" id="validationPassword" th:value="${updateMember.password}" name="password" aria-describedby="validationPasswordFeedback" required>
+      <div id="validationPasswordFeedback" class="invalid-feedback">
+        Please provide a valid password.
+        <br><span>&bull;</span> Minimum 8 characters
+        <span>&bull;</span> 1 lowercase letter
+        <span>&bull;</span> 1 uppercase letter
+        <span>&bull;</span> 1 number
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6"></div>
+
+  <div class="col-md-6 offset-md-3">
+    <label for="validationConfirmPassword" class="form-label">Confirm a password*</label>
+    <div class="input-group has-validation">
+      <input type="password" class="form-control is-valid" id="validationConfirmPassword" th:value="${updateMember.confirmPassword}" name="confirmPassword" aria-describedby="validationConfirmPasswordFeedback" required>
+      <div id="validationConfirmPasswordFeedback" class="invalid-feedback">
+        Please provide a valid password.
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6"></div>
+
+  <div class="col-md-6 offset-md-3">
+    <label for="validationServer03" class="form-label">City</label>
+    <input type="text" class="form-control is-valid" id="validationServer03" th:value="${updateMember.city}" name="city" aria-describedby="validationServer03Feedback" required>
+    <div id="validationServer03Feedback" class="invalid-feedback">
+      Please provide a valid city.
+    </div>
+  </div>
+
+  <div class="col-md-6"></div>
+
+  <div class="col-md-6 offset-md-3">
+    <label for="validationServer04" class="form-label">County</label>
+    <select class="form-select is-valid" id="validationServer04" th:value="${updateMember.county}" name="county" aria-describedby="validationServer04Feedback" required>
+      <option selected disabled value="">Choose...</option>
+      <option>Cork</option>
+      <option>Galway</option>
+      <option>Mayo</option>
+      <option>Donegal</option>
+      <option>Kerry</option>
+      <option>Tipperary</option>
+      <option>Clare</option>
+      <option>Limerick</option>
+      <option>Roscommon</option>
+      <option>Wexford</option>
+      <option>Meath</option>
+      <option>Kilkenny</option>
+      <option>Wicklow</option>
+      <option>Offaly</option>
+      <option>Cavan</option>
+      <option>Waterford</option>
+      <option>Westmeath</option>
+      <option>Sligo</option>
+      <option>Laois</option>
+      <option>Kildare</option>
+      <option>Leitrim</option>
+      <option>Monaghan</option>
+      <option>Longford</option>
+      <option>Dublin</option>
+      <option>Carlow</option>
+      <option>Louth</option>
+    </select>
+    <div id="validationServer04Feedback" class="invalid-feedback">
+      Please select a valid county.
+    </div>
+  </div>
+
+  <div class="col-md-6"></div>
+
+  <div class="col-md-6 offset-md-3">
+    <div class="form-check">
+      <input class="form-check-input is-valid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+      <label class="form-check-label" for="invalidCheck3">
+        I agree to terms and conditions
+      </label>
+      <div id="invalidCheck3Feedback" class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6"></div>
+
+  <div class="col-md-6 offset-md-3">
+    <button class="btn btn-primary" type="submit">Update</button>
+  </div>
+</form>
+
+<div class="container" th:replace="fragment/footer :: copy">
+</div>
+</body>
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script src="/validation.js"></script>
+
+</html>

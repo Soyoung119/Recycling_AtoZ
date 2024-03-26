@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="nav">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/recycling/userIndex">Recycling A to Z</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Recycle an item
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Vapes</a></li>
+            <li><a class="dropdown-item" href="#">Plastic bottles</a></li>
+            <li><a class="dropdown-item" href="#">Paper</a></li>
+            <li><a class="dropdown-item" href="#">Foil</a></li>
+            <li><a class="dropdown-item" href="#">Cardboard</a></li>
+            <li><a class="dropdown-item" href="#">Drink cans</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/moreItems">Find more items</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Where</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Community</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Business</a>
+        </li>
+      </ul>
+      <div th:if="${session.user != null}">
+      <div class="container-fluid">
+        <h3 th:text="|Hello, ${session.user}!|" ></h3>
+      </div>
+
+<!--      <li class="nav-profile dropdown position-static">-->
+        <a class="nav-link dropdown-toggle" href="#" id="navbarProfileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Profile
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="/recycling/articles/update">Manage your account</a></li>
+          <li><a class="dropdown-item" href="/recycling/logout">Sign-out</a></li>
+        </ul>
+<!--      </li>-->
+    </div>
+
+      <div th:unless="${session.user != null}">
+        <form class="d-flex">
+          <a href="/recycling/articles/signin" class="btn btn-outline-success">Sign-in</a>
+        </form>
+      </div>
+  </div>
+  </div>
+</nav>
+
+</body>
+
+</html>
