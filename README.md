@@ -41,11 +41,17 @@ When users need additional help, they can ask questions and share photos with th
 - **Programme:** Higher Diploma in Computing
 - **Focus:** Web Application Development and API Integration
 
-## Get Results
-- how to dispose of waste and near by a glass bank
-<img width="2880" height="3670" alt="Glass" src="https://github.com/user-attachments/assets/c027ad61-842b-4276-baee-5384f19aab52" />
+## Screenshots
 
-- Community
+### Waste Disposal Guidance & Nearby Glass Banks
+
+![Waste disposal guidance and nearby glass banks](https://github.com/user-attachments/assets/c027ad61-842b-4276-baee-5384f19aab52)
+
+### Community
+
+![Community page](https://github.com/user-attachments/assets/edaeb67a-80c7-4f5a-af1c-351c5e49a92f)
+
+![Community comments](https://github.com/user-attachments/assets/06feccc5-e265-43cf-89a7-906f6ff299a3)
 <img width="2880" height="1626" alt="Community1" src="https://github.com/user-attachments/assets/edaeb67a-80c7-4f5a-af1c-351c5e49a92f" />
 <img width="2880" height="3874" alt="Community2" src="https://github.com/user-attachments/assets/06feccc5-e265-43cf-89a7-906f6ff299a3" />
 
