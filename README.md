@@ -52,7 +52,3 @@ When users need additional help, they can ask questions and share photos with th
 ![Community page](https://github.com/user-attachments/assets/edaeb67a-80c7-4f5a-af1c-351c5e49a92f)
 
 ![Community comments](https://github.com/user-attachments/assets/06feccc5-e265-43cf-89a7-906f6ff299a3)
-<img width="2880" height="1626" alt="Community1" src="https://github.com/user-attachments/assets/edaeb67a-80c7-4f5a-af1c-351c5e49a92f" />
-<img width="2880" height="3874" alt="Community2" src="https://github.com/user-attachments/assets/06feccc5-e265-43cf-89a7-906f6ff299a3" />
-
-
