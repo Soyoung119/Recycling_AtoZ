@@ -33,3 +33,10 @@ build/
 .vscode/
 .idea
 target
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Maven
+target/
