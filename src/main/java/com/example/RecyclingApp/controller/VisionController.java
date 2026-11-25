@@ -1,7 +1,7 @@
 package com.example.RecyclingApp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.gcp.vision.CloudVisionTemplate;
+import com.google.cloud.spring.vision.CloudVisionTemplate;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;

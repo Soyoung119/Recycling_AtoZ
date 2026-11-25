@@ -1,10 +1,8 @@
 package com.example.RecyclingApp.entity;
 
-
 import com.example.RecyclingApp.dto.MemberDTO;
 import lombok.*;
-
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
