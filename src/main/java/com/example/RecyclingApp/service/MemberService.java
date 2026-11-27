@@ -19,7 +19,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
     private static final Logger logger = LoggerFactory.getLogger(MemberService.class);
     public void save(MemberDTO memberDTO){
-        MemberEntity memberEntity = MemberEntity.toMemberEntity(memberDTO);
+        MemberEntity memberEntity = memberDTO.toEntity();
         memberRepository.save(memberEntity);
     }
 
@@ -71,7 +71,14 @@ public class MemberService {
     }
 
     public void update(MemberDTO memberDTO) {
-        memberRepository.save(MemberEntity.toUpdateMemberEntity(memberDTO));
+        MemberEntity memberEntity = memberRepository.findById(memberDTO.getId())
+                .orElseThrow(() -> new RuntimeException("Member not found"));
+        memberEntity.setFirstname(memberDTO.getFirstname());
+        memberEntity.setLastname(memberDTO.getLastname());
+        memberEntity.setPassword(memberDTO.getPassword());
+        memberEntity.setCity(memberDTO.getCity());
+        memberEntity.setCounty(memberDTO.getCounty());
+        memberRepository.save(memberEntity);
     }
 
     public void deleteById(Long id) {
