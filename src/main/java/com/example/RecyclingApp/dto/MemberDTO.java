@@ -1,6 +1,5 @@
 package com.example.RecyclingApp.dto;
 
-import com.example.RecyclingApp.entity.MemberEntity;
 import lombok.*;
 
 @AllArgsConstructor
@@ -43,18 +42,5 @@ public class MemberDTO {
 //                '}';
 //    }
 
-    public MemberEntity toEntity() {
-        return new MemberEntity(id, firstname, lastname, emailAddress, password, city, county);
-    }
 
-    public static MemberDTO toDTO(MemberEntity memberEntity){
-        MemberDTO memberDTO = new MemberDTO();
-        memberDTO.setId(memberEntity.getId());
-        memberDTO.setFirstname(memberEntity.getFirstname());
-        memberDTO.setLastname(memberEntity.getLastname());
-        memberDTO.setEmailAddress(memberEntity.getEmailAddress());
-        memberDTO.setCity(memberEntity.getCity());
-        memberDTO.setCounty(memberEntity.getCounty());
-        return memberDTO;
-    }
 }

@@ -2,6 +2,7 @@ package com.example.RecyclingApp.service;
 
 import com.example.RecyclingApp.dto.MemberDTO;
 import com.example.RecyclingApp.entity.MemberEntity;
+import com.example.RecyclingApp.mapper.MemberMapper;
 import com.example.RecyclingApp.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,9 +18,10 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class MemberService {
     private final MemberRepository memberRepository;
+    private final MemberMapper memberMapper;
     private static final Logger logger = LoggerFactory.getLogger(MemberService.class);
     public void save(MemberDTO memberDTO){
-        MemberEntity memberEntity = memberDTO.toEntity();
+        MemberEntity memberEntity = memberMapper.toEntity(memberDTO);
         memberRepository.save(memberEntity);
     }
 
@@ -27,16 +29,16 @@ public class MemberService {
         Optional<MemberEntity> byEmailAddress = memberRepository.findByEmailAddress(memberDTO.getEmailAddress());
         if(byEmailAddress.isPresent()){
             MemberEntity memberEntity = byEmailAddress.get();
-            logger.debug("로그인 성공");
+            logger.debug("Login successful");
             if(memberEntity.getPassword().equals(memberDTO.getPassword())){
-            MemberDTO dto = MemberDTO.toDTO(memberEntity);
+            MemberDTO dto = MemberMapper.toDTO(memberEntity);
             return dto;
             } else{
-                logger.warn("비밀번호 불일치");
+                logger.warn("Invalid Password");
                 return null;
             }
         } else{
-            logger.warn("사용자를 찾을 수 없음");
+            logger.warn("Invalid Email");
             return null;
         }
     }
@@ -45,7 +47,7 @@ public class MemberService {
         List<MemberEntity> memberEntityList = memberRepository.findAll();
         List<MemberDTO> memberDTOList = new ArrayList<>();
         for (MemberEntity memberEntity: memberEntityList){
-            memberDTOList.add(MemberDTO.toDTO(memberEntity));
+            memberDTOList.add(MemberMapper.toDTO(memberEntity));
 //            MemberDTO memberDTO = MemberDTO.toDTO(memberEntity);
 //            memberDTOList.add(memberDTO);
         }
@@ -55,7 +57,7 @@ public class MemberService {
     public MemberDTO findById(Long id) {
         Optional<MemberEntity> optionalMemberEntity = memberRepository.findById(id);
         if(optionalMemberEntity.isPresent()){
-            return MemberDTO.toDTO(optionalMemberEntity.get());
+            return MemberMapper.toDTO(optionalMemberEntity.get());
         } else{
             return null;
         }
@@ -64,7 +66,7 @@ public class MemberService {
     public MemberDTO updateForm(String myEmail) {
         Optional<MemberEntity> optionalMemberEntity = memberRepository.findByEmailAddress(myEmail);
         if(optionalMemberEntity.isPresent()){
-            return MemberDTO.toDTO(optionalMemberEntity.get());
+            return MemberMapper.toDTO(optionalMemberEntity.get());
         } else{
             return null;
         }
